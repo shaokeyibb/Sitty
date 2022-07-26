@@ -1,0 +1,19 @@
+{
+    "search_suggesion_title": {
+        "message": "搜索建议",
+        "description": "Search guggestion pop up's title."
+      },
+      "search_suggestion_from":{
+        "message": "搜索建议由 $name$ 提供",
+        "description": "Search Suggestion pop up's card footer.",
+        "placeholders": {
+          "name": {
+            "content": "$1"
+          }
+        }
+      },
+      "search_suggestion_visit":{
+        "message": "点击访问",
+        "description": "Search Suggestion pop up's button text."
+      }
+}

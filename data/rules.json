@@ -1,0 +1,28 @@
+{
+	"search-advise": [
+		{
+			"name": "Technobalde",
+			"keyword": [
+				"technoblade",
+				"大小写都不敏感！",
+				"血神",
+				"猪神",
+				"techno"
+			],
+			"content": [
+				{
+					"name": "Technoblade - 萌娘百科",
+					"url": "https://zh.moegirl.org.cn/Technoblade"
+				},
+				{
+					"name": "Technoblade - DreamTeam",
+					"url": "https://dreamteam.fandom.com/wiki/Technoblade/SMP"
+				},
+				{
+					"name": "Technoblade 的在线商店",
+					"url": "https://technoblade.com"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+    "search_suggestion_title": {
+        "message": "Search Suggestions",
+        "description": "Search Suggestion pop up's title."
+      },
+      "search_suggestion_from":{
+        "message": "Suggestion provide by $name$",
+        "description": "Search Suggestion pop up's card footer.",
+        "placeholders": {
+          "name": {
+            "content": "$1"
+          }
+        }
+      },
+      "search_suggestion_visit":{
+        "message": "Click to visit",
+        "description": "Search Suggestion pop up's button text."
+      }
+}

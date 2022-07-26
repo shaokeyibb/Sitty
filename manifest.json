@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "Sitty",
+    "version": "1.0",
+    "description": "Sitty is a web extension that can help you stay away from malicious websites, providing search suggestions and browsing suggestions.",
+    "author": "HikariLan",
+    "default_locale": "zh",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.baidu.com/*",
+                "https://www.google.com/*",
+                "https://*.bing.com/*"
+            ],
+            "js": [
+                "src/content_scripts/search_suggestions.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "data/*.json"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+      },
+    "action": {},
+    "permissions": [
+        "tabs"
+      ]
+}
