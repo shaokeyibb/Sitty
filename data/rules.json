@@ -1,26 +1,19 @@
 {
 	"search-advise": [
 		{
-			"name": "Technobalde",
+			"name": "Steam 官网",
 			"keyword": [
-				"technoblade",
-				"大小写都不敏感！",
-				"血神",
-				"猪神",
-				"techno"
+				"steam",
+				"蒸汽平台"
 			],
 			"content": [
 				{
-					"name": "Technoblade - 萌娘百科",
-					"url": "https://zh.moegirl.org.cn/Technoblade"
+					"name": "Steam 官网",
+					"url": "https://store.steampowered.com/"
 				},
 				{
-					"name": "Technoblade - DreamTeam",
-					"url": "https://dreamteam.fandom.com/wiki/Technoblade/SMP"
-				},
-				{
-					"name": "Technoblade 的在线商店",
-					"url": "https://technoblade.com"
+					"name": "蒸汽平台（Steam 中国版）官网",
+					"url": "https://store.steamchina.com/"
 				}
 			]
 		}
