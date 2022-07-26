@@ -1,9 +1,9 @@
 // Baidu solution
 if (document.URL.startsWith("https://www.baidu.com/")) {
-    let query_paramater = new URLSearchParams(location.search).get('wd');
+    let query_parameter = new URLSearchParams(location.search).get('wd');
     let search_bar = document.getElementById("form")
-    if (query_paramater) {
-        invoke_suggestion(query_paramater)
+    if (query_parameter) {
+        invoke_suggestion(query_parameter)
     }
     if (search_bar) {
         search_bar.addEventListener("submit", () => {
@@ -13,16 +13,16 @@ if (document.URL.startsWith("https://www.baidu.com/")) {
 }
 // Google solution
 else if (document.URL.startsWith("https://www.google.com/")) {
-    let query_paramater = new URLSearchParams(location.search).get('q');
-    if (query_paramater) {
-        invoke_suggestion(query_paramater)
+    let query_parameter = new URLSearchParams(location.search).get('q');
+    if (query_parameter) {
+        invoke_suggestion(query_parameter)
     }
 }
 // Bing solution
 else if (document.URL.startsWith("https://cn.bing.com") || document.URL.startsWith("https://www.bing.com")) {
-    let query_paramater = new URLSearchParams(location.search).get('q');
-    if (query_paramater) {
-        invoke_suggestion(query_paramater)
+    let query_parameter = new URLSearchParams(location.search).get('q');
+    if (query_parameter) {
+        invoke_suggestion(query_parameter)
     }
 }
 
