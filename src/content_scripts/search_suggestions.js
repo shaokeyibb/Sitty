@@ -61,8 +61,12 @@ function suggest(keyword) {
             let advises = JSON.parse(xhr.responseText)["search-advise"]
             let result = []
             for (let idx in advises) {
-                if (advises[idx].keyword.indexOf(keyword.toLowerCase()) != -1) {
-                    result[result.length] = advises[idx]
+                let keywords = advises[idx].keyword
+                for (let idx in keywords){
+                    if (keyword.toLowerCase().indexOf(keywords[idx]) != -1) {
+                        result[result.length] = advises[idx]
+                    }
+                    break;
                 }
             }
             resolve(result)
