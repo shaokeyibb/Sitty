@@ -58,7 +58,7 @@ function suggest(keyword) {
     return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
         xhr.addEventListener("load", () => {
-            let advises = JSON.parse(xhr.responseText)["search-advise"]
+            let advises = JSON.parse(xhr.responseText)["search-suggestions"]
             let result = []
             for (let idx in advises) {
                 let keywords = advises[idx].keyword
