@@ -4,7 +4,7 @@
         "description": "Search Suggestion pop up's title."
       },
       "search_suggestion_from":{
-        "message": "Suggestion provide by $name$",
+        "message": "Suggestion provided by $name$",
         "description": "Search Suggestion pop up's card footer.",
         "placeholders": {
           "name": {
