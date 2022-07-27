@@ -4,10 +4,14 @@ html {
 }
 
 .title_border{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     background-color: #0d6efd;
     min-height: 50px;
+}
+
+.title{
+    min-height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
 }
