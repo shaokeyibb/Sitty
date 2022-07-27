@@ -1,7 +1,13 @@
 {
+	"manifest": {
+		"name": "演示规则",
+		"author": "demo",
+		"subscribe-link": "https://example.com/example-rules.json",
+		"last-update": "时间戳",
+		"description": "这是一个规则示例"
+	},
 	"search-suggestions": [
 		{
-			"name": "Steam 官网",
 			"keyword": [
 				"steam",
 				"蒸汽平台"

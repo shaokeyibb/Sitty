@@ -26,7 +26,7 @@ else if (document.URL.startsWith("https://cn.bing.com") || document.URL.startsWi
     }
 }
 
-let storage = []
+let storage = {}
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.type == "search_suggestions") {
@@ -39,14 +39,14 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 function pop_up() {
     chrome.runtime.sendMessage({
         type: "pop_up_search_suggestion",
-        count: storage.length.toString()
+        count: storage.data.length.toString()
     })
 }
 
 function invoke_suggestion(keyword) {
     suggest(keyword).then((suggestions) => {
         storage = suggestions
-        if (suggestions.length != 0) {
+        if (suggestions.data.length != 0) {
             pop_up()
         }
     })
@@ -58,7 +58,8 @@ function suggest(keyword) {
     return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
         xhr.addEventListener("load", () => {
-            let advises = JSON.parse(xhr.responseText)["search-suggestions"]
+            let responseJson = JSON.parse(xhr.responseText)
+            let advises = responseJson["search-suggestions"]
             let result = []
             for (let idx in advises) {
                 let keywords = advises[idx].keyword
@@ -69,7 +70,10 @@ function suggest(keyword) {
                     break;
                 }
             }
-            resolve(result)
+            resolve({
+                name: responseJson.manifest.name,
+                data: result
+            })
         })
         xhr.addEventListener("error", () => {
             reject()
