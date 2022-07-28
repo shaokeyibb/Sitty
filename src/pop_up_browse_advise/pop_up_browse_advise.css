@@ -1,0 +1,17 @@
+html {
+    min-height: 5em;
+    min-width: 350px;
+}
+
+.title_border{
+    background-color: #FF8000;
+    min-height: 50px;
+}
+
+.title{
+    min-height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+}

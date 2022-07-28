@@ -26,6 +26,7 @@ else if (document.URL.startsWith("https://cn.bing.com") || document.URL.startsWi
     }
 }
 
+// TODO
 let storage = {}
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -36,7 +37,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     }
 })
 
-function pop_up() {
+function popup() {
     chrome.runtime.sendMessage({
         type: "pop_up_search_suggestion",
         count: storage.data.length.toString()
@@ -47,12 +48,13 @@ function invoke_suggestion(keyword) {
     suggest(keyword).then((suggestions) => {
         storage = suggestions
         if (suggestions.data.length !== 0) {
-            pop_up()
+            popup()
         }
     })
 }
 
 
+// TODO
 function suggest(keyword) {
     let rules = chrome.runtime.getURL("data/rules.json")
     return new Promise((resolve, reject) => {

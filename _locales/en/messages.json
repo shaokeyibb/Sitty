@@ -1,19 +1,53 @@
 {
-    "search_suggestion_title": {
-        "message": "Search Suggestions",
-        "description": "Search Suggestion pop up's title."
-      },
-      "search_suggestion_from":{
-        "message": "Suggestion provided by $name$",
-        "description": "Search Suggestion pop up's card footer.",
-        "placeholders": {
-          "name": {
-            "content": "$1"
-          }
-        }
-      },
-      "search_suggestion_visit":{
-        "message": "Click to visit",
-        "description": "Search Suggestion pop up's button text."
+  "search_suggestion_title": {
+    "message": "Search Suggestions",
+    "description": "Search Suggestion pop up's title."
+  },
+  "search_suggestion_from": {
+    "message": "Suggestion provided by $name$",
+    "description": "Search Suggestion pop up's card footer.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
       }
+    }
+  },
+  "search_suggestion_visit": {
+    "message": "Click to visit",
+    "description": "Search Suggestion pop up's button text."
+  },
+  "browse_advise_mask_title": {
+    "message": "The website you are visiting has been blocked by rule $name$ because:",
+    "description": "Browse Advise Mask title.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "browse_advise_modal_title": {
+    "message": "The website you are visiting may not an official website,visit these websites instead:",
+    "description": "Browse Advise Modal title."
+  },
+  "browse_advise_modal_attn": {
+    "message": "Reported by $name$",
+    "description": "Browse Advise Modal attn.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "browse_advise_modal_ignore": {
+    "message": "Ignore",
+    "description": "Browse Advise Modal button close."
+  },
+  "browse_advise_modal_close": {
+    "message": "Close",
+    "description": "Browse Advise Modal button save."
+  },
+  "browser_advise_toast_title": {
+    "message": "Warning",
+    "description": "Browser Advise Toast title."
+  }
 }

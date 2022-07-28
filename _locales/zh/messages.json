@@ -1,19 +1,53 @@
 {
-    "search_suggestion_title": {
-        "message": "搜索建议",
-        "description": "Search guggestion pop up's title."
-      },
-      "search_suggestion_from":{
-        "message": "搜索建议由 $name$ 提供",
-        "description": "Search Suggestion pop up's card footer.",
-        "placeholders": {
-          "name": {
-            "content": "$1"
-          }
-        }
-      },
-      "search_suggestion_visit":{
-        "message": "点击访问",
-        "description": "Search Suggestion pop up's button text."
+  "search_suggestion_title": {
+    "message": "搜索建议",
+    "description": "Search guggestion pop up's title."
+  },
+  "search_suggestion_from": {
+    "message": "搜索建议由 $name$ 提供",
+    "description": "Search Suggestion pop up's card footer.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
       }
+    }
+  },
+  "search_suggestion_visit": {
+    "message": "点击访问",
+    "description": "Search Suggestion pop up's button text."
+  },
+  "browse_advise_mask_title": {
+    "message": "您所访问的网站已被 %name% 规则阻止访问，原因：",
+    "description": "Browse Advise Mask title.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "browse_advise_modal_title": {
+    "message": "您所访问的网站可能非官方网站，建议访问官方网站：",
+    "description": "Browse Advise Modal title."
+  },
+  "browse_advise_modal_attn": {
+    "message": "由 $name$ 报告",
+    "description": "Browse Advise Modal attn.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "browse_advise_modal_ignore": {
+    "message": "忽略警告",
+    "description": "Browse Advise Modal button close."
+  },
+  "browse_advise_modal_close": {
+    "message": "关闭页面",
+    "description": "Browse Advise Modal button save."
+  },
+  "browser_advise_toast_title": {
+    "message": "访问警告",
+    "description": "Browser Advise Toast title."
+  }
 }

@@ -1,27 +1,88 @@
 {
-	"manifest": {
-		"name": "演示规则",
-		"author": "demo",
-		"subscribe-link": "https://example.com/example-rules.json",
-		"last-update": "时间戳",
-		"description": "这是一个规则示例"
-	},
-	"search-suggestions": [
-		{
-			"keyword": [
-				"steam",
-				"蒸汽平台"
-			],
-			"content": [
-				{
-					"name": "Steam 官网",
-					"url": "https://store.steampowered.com/"
-				},
-				{
-					"name": "蒸汽平台（Steam 中国版）官网",
-					"url": "https://store.steamchina.com/"
-				}
-			]
-		}
-	]
+  "manifest": {
+    "name": "演示规则",
+    "author": "demo",
+    "subscribe-link": "https://example.com/example-rules.json",
+    "last-update": "时间戳",
+    "description": "这是一个规则示例"
+  },
+  "browse-advise": [
+    {
+      "selector-url": [
+        "baidu.com",
+        "baidu.hk"
+      ],
+      "type": "popup",
+      "content": "请不要使用百度搜索!<i>百度一下全是病，一问网友坟已定</i>"
+    },
+    {
+      "selector-url": [
+        "somewebsite.com/somepageincludingminerjs.html"
+      ],
+      "selector-request": [
+        "www.webminer.com/cpu.js",
+        "minerjs.com/miner.js"
+      ],
+      "type": "warning",
+      "content": "在此站点上检测到 CPUMiner，建议您离开此站点"
+    },
+    {
+      "selector-url": [
+        "https://malwaresite.com"
+      ],
+      "type": "block",
+      "content": "该站点的下载链接包含病毒，可感染您的计算机"
+    },
+    {
+      "selector-url": [
+        "mcbbs.com",
+        "mcbbs.cc",
+        "mcbbs.top"
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "我的世界中文论坛",
+          "url": "https://www.mcbbs.net"
+        },
+        {
+          "name": "网易我的世界论坛",
+          "url": "https://mc.netease.com/"
+        }
+      ]
+    },
+    {
+      "selector-dom": [
+        {
+          "dom": "/html/body",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    }
+  ],
+  "search-suggestions": [
+    {
+      "keyword": [
+        "steam",
+        "蒸汽平台"
+      ],
+      "content": [
+        {
+          "name": "Steam 官网",
+          "url": "https://store.steampowered.com/"
+        },
+        {
+          "name": "蒸汽平台（Steam 中国版）官网",
+          "url": "https://store.steamchina.com/"
+        }
+      ]
+    }
+  ]
 }
