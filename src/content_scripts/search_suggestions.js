@@ -29,7 +29,7 @@ else if (document.URL.startsWith("https://cn.bing.com") || document.URL.startsWi
 let storage = {}
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    if (request.type == "search_suggestions") {
+    if (request.type === "search_suggestions") {
         sendResponse({
             data: storage
         })
@@ -46,7 +46,7 @@ function pop_up() {
 function invoke_suggestion(keyword) {
     suggest(keyword).then((suggestions) => {
         storage = suggestions
-        if (suggestions.data.length != 0) {
+        if (suggestions.data.length !== 0) {
             pop_up()
         }
     })
@@ -63,11 +63,11 @@ function suggest(keyword) {
             let result = []
             for (let idx in advises) {
                 let keywords = advises[idx].keyword
-                for (let idx in keywords){
-                    if (keyword.toLowerCase().indexOf(keywords[idx]) != -1) {
+                for (let idx in keywords) {
+                    if (new RegExp(keyword).test(keywords[idx])) {
                         result[result.length] = advises[idx]
+                        break;
                     }
-                    break;
                 }
             }
             resolve({
