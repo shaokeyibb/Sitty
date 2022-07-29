@@ -54,8 +54,8 @@
     {
       "selector-dom": [
         {
-          "dom": "/html/body",
-          "expression": "搜狗输入法"
+          "dom": "/html/body/div[3]/div[1]/div/div/div[2]/div[1]/div[2]/div/h2",
+          "expression": "搜狗拼音输入法"
         }
       ],
       "type": "official-website",
