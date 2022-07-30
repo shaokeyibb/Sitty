@@ -235,11 +235,15 @@ function check() {
             let advises = responseJson["browse-advise"]
             for (let idx in advises) {
                 let rule = advises[idx]
-                if (checkRequest(rule)) {
-                    pending_requests.push(rule)
-                }
-                if (checkSelector(rule)) {
-                    result.push(rule)
+                const checkedSelector = checkSelector(rule)
+                const hadRequest = hasRequest(rule)
+                if (checkedSelector !== false) {
+                    if (hadRequest) {
+                        pending_requests.push(rule)
+                    }
+                    if (checkedSelector === true) {
+                        result.push(rule)
+                    }
                 }
             }
             chrome.runtime.sendMessage({
@@ -257,42 +261,57 @@ function check() {
     })
 }
 
+// check url and dom, if matches, return true, if all not exists, return undefined, or else return false
 function checkSelector(rule) {
     const selectorUrl = rule["selector-url"]
     const selectorDom = rule["selector-dom"]
+
+    if (selectorUrl === undefined && selectorDom === undefined) {
+        return undefined;
+    }
+
     if (selectorUrl) {
+        let url_passed = false;
         for (const urlKey in selectorUrl) {
+            // any url matches, pass
             if (new RegExp(selectorUrl[urlKey]).test(document.URL)) {
-                return true;
+                url_passed = true
+                break;
             }
         }
-        return false;
-    } else if (selectorDom) {
+        if (!url_passed) return false;
+    }
+    if (selectorDom) {
+        let dom_passed = false;
         for (const domKey in selectorDom) {
             const select = selectorDom[domKey]
             const dom = document.evaluate(select.dom, document, null, XPathResult.ANY_TYPE, null)
             while (true) {
                 const next = dom.iterateNext();
+                // if all dom not match, break
                 if (!next) {
                     break;
                 }
                 if (select.expression) {
                     // match expression
                     if (new RegExp(select.expression).test(next.textContent)) {
-                        return true;
+                        dom_passed = true;
+                        break;
                     }
                 } else {
                     // match anything
-                    return true;
+                    dom_passed = true;
+                    break;
                 }
             }
+            if (dom_passed) break;
         }
-        return false;
+        if (!dom_passed) return false;
     }
-    return false;
+    return true;
 }
 
-function checkRequest(rule) {
+function hasRequest(rule) {
     return rule["selector-request"] !== undefined
 }
 
