@@ -3,30 +3,28 @@
     "name": "演示规则",
     "author": "demo",
     "subscribe-link": "https://example.com/example-rules.json",
-    "last-update": "时间戳",
+    "last-update": "1659252009",
     "description": "这是一个规则示例"
   },
   "browse-advise": [
     {
+      "_comment": "提醒steam游戏管家，仿冒steam网页",
       "selector-url": [
-        "baidu.com",
-        "baidu.hk"
+        "http://www.tzdsjx.com/"
       ],
       "type": "popup",
-      "content": "请不要使用百度搜索!<i>百度一下全是病，一问网友坟已定</i>"
+      "content": "警惕当前网站为非官方网站，可能造成财产损失!"
     },
     {
+      "_comment": "警告包含cpu-miner的网站",
       "selector-url": [
-        "somewebsite.com/somepageincludingminerjs.html"
-      ],
-      "selector-request": [
-        "www.webminer.com/cpu.js",
-        "minerjs.com/miner.js"
+        "https://cpu-miners.com/"
       ],
       "type": "warning",
       "content": "在此站点上检测到 CPUMiner，建议您离开此站点"
     },
     {
+      "_comment": "拦截可能包含病毒的网页链接",
       "selector-url": [
         "https://malwaresite.com"
       ],
@@ -34,24 +32,10 @@
       "content": "该站点的下载链接包含病毒，可感染您的计算机"
     },
     {
+      "_comment": "拦截pc.qq.com下载站的搜狗输入法",
       "selector-url": [
-        "mcbbs.com",
-        "mcbbs.cc",
-        "mcbbs.top"
+        "https://pc.qq.com/"
       ],
-      "type": "official-website",
-      "content": [
-        {
-          "name": "我的世界中文论坛",
-          "url": "https://www.mcbbs.net"
-        },
-        {
-          "name": "网易我的世界论坛",
-          "url": "https://mc.netease.com/"
-        }
-      ]
-    },
-    {
       "selector-dom": [
         {
           "dom": "/html/body/div[3]/div[1]/div/div/div[2]/div[1]/div[2]/div/h2",
@@ -65,8 +49,85 @@
           "url": "https://shurufa.sogou.com"
         }
       ]
+    },
+    {
+      "_comment": "拦截pc.qq.com下载站的Edge浏览器",
+      "selector-url": [
+        "https://pc.qq.com/"
+      ],
+      "selector-dom": [
+        {
+          "dom": "/html/body/div[3]/div[1]/div/div/div[2]/div[1]/div[2]/div/h2",
+          "expression": "Microsoft Edge"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "Microsoft Edge官网",
+          "url": "https://www.microsoft.com/zh-cn/edge?r=1"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截www.onlinedown.net下载站的搜狗输入法",
+      "selector-url": [
+        "https://www.onlinedown.net/"
+      ],
+      "selector-dom": [
+        {
+          "dom": "/html/body/section/div/div[1]/div[3]/div[1]/div/h1",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截soft.onlinedown.net下载站的搜狗输入法",
+      "selector-url": [
+        "http://soft.onlinedown.net/soft"
+      ],
+      "selector-dom": [
+        {
+          "dom": "/html/body/div[5]/div[1]/div[1]/div[1]/div[1]/div/h2/div/em/strong",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截www.downza.cn/soft下载站的搜狗输入法",
+      "selector-url": [
+        "http://www.downza.cn/soft"
+      ],
+      "selector-dom": [
+        {
+          "dom": "//*[@id=\"dm\"]/div[2]/div/div[5]/div[1]/dl/dt/div[2]/h2/em",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
     }
   ],
+
   "search-suggestions": [
     {
       "keyword": [
@@ -81,6 +142,33 @@
         {
           "name": "蒸汽平台（Steam 中国版）官网",
           "url": "https://store.steamchina.com/"
+        }
+      ]
+    },
+    {
+      "keyword": [
+        "epic"
+      ],
+      "content": [
+        {
+          "name": "Epic Games 官网",
+          "url": "https://www.epicgames.com/site"
+        },
+        {
+          "name": "Epic Games 中文官网",
+          "url": "https://www.epicgames.com/site/zh-CN/home"
+        }
+      ]
+    },
+    {
+      "keyword": [
+        "火绒",
+        "火绒安全"
+      ],
+      "content": [
+        {
+          "name": "火绒安全官网",
+          "url": "https://www.huorong.cn/"
         }
       ]
     }
