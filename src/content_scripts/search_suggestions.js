@@ -66,7 +66,7 @@ function suggest(keyword) {
             for (let idx in advises) {
                 let keywords = advises[idx].keyword
                 for (let idx in keywords) {
-                    if (new RegExp(keyword).test(keywords[idx])) {
+                    if (new RegExp(keyword.toLowerCase()).test(keywords[idx])) {
                         result[result.length] = advises[idx]
                         break;
                     }
