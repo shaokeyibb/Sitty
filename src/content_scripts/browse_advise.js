@@ -273,6 +273,9 @@ function checkSelector(rule) {
     if (selectorUrl) {
         let url_passed = false;
         for (const urlKey in selectorUrl) {
+            if (urlKey === "") {
+                continue;
+            }
             // any url matches, pass
             if (new RegExp(selectorUrl[urlKey]).test(document.URL)) {
                 url_passed = true
@@ -285,6 +288,9 @@ function checkSelector(rule) {
         let dom_passed = false;
         for (const domKey in selectorDom) {
             const select = selectorDom[domKey]
+            if (!select || select.dom === "") {
+                continue;
+            }
             const dom = document.evaluate(select.dom, document, null, XPathResult.ANY_TYPE, null)
             while (true) {
                 const next = dom.iterateNext();
