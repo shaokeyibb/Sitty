@@ -1,10 +1,10 @@
 {
   "manifest": {
     "name": "演示规则",
-    "author": "demo",
+    "author": "example",
     "subscribe-link": "https://example.com/example-rules.json",
-    "last-update": "1659252009",
-    "description": "这是一个规则示例"
+    "last-update": "1661067655",
+    "description": "覆盖主流下载站的演示规则"
   },
   "browse-advise": [
     {
@@ -15,6 +15,7 @@
       "type": "popup",
       "content": "警惕当前网站为非官方网站，可能造成财产损失!"
     },
+
     {
       "_comment": "警告包含cpu-miner的网站",
       "selector-url": [
@@ -23,6 +24,34 @@
       "type": "warning",
       "content": "在此站点上检测到 CPUMiner，建议您离开此站点"
     },
+
+
+    {
+      "_comment": "警告可能篡改主页的2345导航网站",
+      "selector-url": [
+        "http://www.2345.cn/"
+      ],
+      "type": "warning",
+      "content": "此站点可能篡改主页，建议您离开此站点"
+    },
+    {
+      "_comment": "警告可能篡改主页的360导航网站",
+      "selector-url": [
+        "https://hao.360.com/"
+      ],
+      "type": "warning",
+      "content": "此站点可能篡改主页，建议您离开此站点"
+    },
+    {
+      "_comment": "警告可能篡改主页的搜狗导航网站",
+      "selector-url": [
+        "https://123.sogou.com/"
+      ],
+      "type": "warning",
+      "content": "此站点可能篡改主页，建议您离开此站点"
+    },
+
+
     {
       "_comment": "拦截可能包含病毒的网页链接",
       "selector-url": [
@@ -31,8 +60,10 @@
       "type": "block",
       "content": "该站点的下载链接包含病毒，可感染您的计算机"
     },
+
+
     {
-      "_comment": "拦截pc.qq.com下载站的搜狗输入法",
+      "_comment": "拦截pc.qq.com下载站(腾讯软件中心)的搜狗输入法",
       "selector-url": [
         "https://pc.qq.com/"
       ],
@@ -51,7 +82,7 @@
       ]
     },
     {
-      "_comment": "拦截pc.qq.com下载站的Edge浏览器",
+      "_comment": "拦截pc.qq.com下载站(腾讯软件中心)的Edge浏览器",
       "selector-url": [
         "https://pc.qq.com/"
       ],
@@ -70,7 +101,7 @@
       ]
     },
     {
-      "_comment": "拦截www.onlinedown.net下载站的搜狗输入法",
+      "_comment": "拦截www.onlinedown.net下载站(华军软件园)的搜狗输入法",
       "selector-url": [
         "https://www.onlinedown.net/"
       ],
@@ -89,13 +120,13 @@
       ]
     },
     {
-      "_comment": "拦截soft.onlinedown.net下载站的搜狗输入法",
+      "_comment": "拦截www.downza.cn/soft下载站(下载之家)的搜狗输入法",
       "selector-url": [
-        "http://soft.onlinedown.net/soft"
+        "http://www.downza.cn/soft"
       ],
       "selector-dom": [
         {
-          "dom": "/html/body/div[5]/div[1]/div[1]/div[1]/div[1]/div/h2/div/em/strong",
+          "dom": "//*[@id=\"dm\"]/div[2]/div/div[5]/div[1]/dl/dt/div[2]/h2/em",
           "expression": "搜狗输入法"
         }
       ],
@@ -108,13 +139,241 @@
       ]
     },
     {
-      "_comment": "拦截www.downza.cn/soft下载站的搜狗输入法",
+      "_comment": "拦截https://www.pc6.com/下载站(PC6)的搜狗输入法",
       "selector-url": [
-        "http://www.downza.cn/soft"
+        "https://www.pc6.com"
       ],
       "selector-dom": [
         {
-          "dom": "//*[@id=\"dm\"]/div[2]/div/div[5]/div[1]/dl/dt/div[2]/h2/em",
+          "dom": "//*[@id=\"softTit\"]/h1",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截https://www.cr173.com/soft(西西软件园)的搜狗输入法",
+      "selector-url": [
+        "https://www.cr173.com/soft"
+      ],
+      "selector-dom": [
+        {
+          "dom": "//*[@id=\"softtitle\"]",
+          "expression": "搜狗拼音输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截https://www.7xiazai.com/(小兵下载站)的搜狗输入法",
+      "selector-url": [
+        "https://www.7xiazai.com/"
+      ],
+      "selector-dom": [
+        {
+          "dom": "//*[@id=\"post-178\"]/header/h1",
+          "expression": "搜狗拼音输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截http://www.ddooo.com/softdown(多多软件站)的搜狗输入法",
+      "selector-url": [
+        "http://www.ddooo.com/softdown"
+      ],
+      "selector-dom": [
+        {
+          "dom": "/html/body/div[4]/div[1]/div[1]/h1",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截http://www.downcc.com/soft(绿色资源网)的搜狗输入法",
+      "selector-url": [
+        "http://www.downcc.com/soft"
+      ],
+      "selector-dom": [
+        {
+          "dom": "/html/body/section[1]/section/header/h1",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截https://www.ggzha.com/(gg下载站)的搜狗输入法",
+      "selector-url": [
+        "https://www.ggzha.com/"
+      ],
+      "selector-dom": [
+        {
+          "dom": "//*[@id=\"bodyMain\"]/div[2]/div[1]/div/h1",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截https://www.7xdown.com/(七喜下载站)的搜狗输入法",
+      "selector-url": [
+        "https://www.7xdown.com/"
+      ],
+      "selector-dom": [
+        {
+          "dom": "/html/body/div[3]/div[2]/div[1]/h1/span",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截http://www.dongpow.com/soft(东坡网)的搜狗输入法",
+      "selector-url": [
+        "http://www.dongpow.com/soft"
+      ],
+      "selector-dom": [
+        {
+          "dom": "/html/body/div[5]/div/div[3]/div[1]/h1",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截http://www.xz7.com/(极光下载站)的搜狗输入法",
+      "selector-url": [
+        "http://www.xz7.com/"
+      ],
+      "selector-dom": [
+        {
+          "dom": "/html/body/div[5]/div/div[2]/div[1]/h1",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截https://www.32r.com/soft(3322软件站)的搜狗输入法",
+      "selector-url": [
+        "https://www.32r.com/soft"
+      ],
+      "selector-dom": [
+        {
+          "dom": "/html/body/div[5]/div[1]/div[1]/h1",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截https://www.duote.com/soft(多特软件站)的搜狗输入法",
+      "selector-url": [
+        "https://www.duote.com/soft"
+      ],
+      "selector-dom": [
+        {
+          "dom": "/html/body/div[5]/div/div[1]/div[2]/div[1]/div/h1",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截https://www.rz520.com/(520下载站)的搜狗输入法",
+      "selector-url": [
+        "https://www.rz520.com/"
+      ],
+      "selector-dom": [
+        {
+          "dom": "//*[@id=\"contentMain\"]/div[1]/div[1]/h1",
+          "expression": "搜狗输入法"
+        }
+      ],
+      "type": "official-website",
+      "content": [
+        {
+          "name": "搜狗输入法PC版官网",
+          "url": "https://shurufa.sogou.com"
+        }
+      ]
+    },
+    {
+      "_comment": "拦截http://www.xfdown.com/(旋风下载站)的搜狗输入法",
+      "selector-url": [
+        "http://www.xfdown.com/"
+      ],
+      "selector-dom": [
+        {
+          "dom": "/html/body/div[4]/div[2]/div[1]/div/h1",
           "expression": "搜狗输入法"
         }
       ],
