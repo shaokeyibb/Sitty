@@ -56,11 +56,10 @@ function invoke_suggestion(keyword) {
 
 // TODO
 function suggest(keyword) {
-    let rules = chrome.runtime.getURL("data/rules.json")
-    return new Promise((resolve, reject) => {
-        let xhr = new XMLHttpRequest();
-        xhr.addEventListener("load", () => {
-            let responseJson = JSON.parse(xhr.responseText)
+    return new Promise((resolve) => {
+        chrome.storage.local.get("internal_rules").then((json) => {
+            let responseJson = json["internal_rules"]
+
             let advises = responseJson["search-suggestions"]
             let result = []
             for (let idx in advises) {
@@ -77,10 +76,5 @@ function suggest(keyword) {
                 data: result
             })
         })
-        xhr.addEventListener("error", () => {
-            reject()
-        })
-        xhr.open("GET", rules, true);
-        xhr.send();
     })
 }

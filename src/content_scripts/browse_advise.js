@@ -222,13 +222,11 @@ function removeBootstrapCSS() {
     })
 }
 
-// TODO
 function check() {
     return new Promise((resolve) => {
-        let rules = chrome.runtime.getURL("data/rules.json")
-        let xhr = new XMLHttpRequest();
-        xhr.addEventListener("load", () => {
-            let responseJson = JSON.parse(xhr.responseText)
+        chrome.storage.local.get("internal_rules").then((json) => {
+            let responseJson = json["internal_rules"]
+
             let pending_requests = [];
             let result = []
 
@@ -256,8 +254,6 @@ function check() {
                 data: result
             })
         })
-        xhr.open("GET", rules, true);
-        xhr.send();
     })
 }
 
