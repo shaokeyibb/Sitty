@@ -23,7 +23,7 @@ function updateInternalRules() {
         if (r.ok) {
             r.json().then(responseJson => {
                 chrome.storage.local.get("internal_rules").then((json) => {
-                    if (responseJson.version > json["internal_rules"].manifest["last-update"]) {
+                    if (!json["internal_rules"] || responseJson.version > json["internal_rules"].manifest["last-update"]) {
                         chrome.storage.local.set({internal_rules: responseJson}).then(() => {
                             console.log("Internal rules updated!")
                         })
