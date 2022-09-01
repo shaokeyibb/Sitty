@@ -54,7 +54,6 @@ function invoke_suggestion(keyword) {
 }
 
 
-// TODO
 function suggest(keyword) {
     return new Promise((resolve) => {
         chrome.storage.local.get("internal_rules").then((json) => {
@@ -64,8 +63,8 @@ function suggest(keyword) {
             let result = []
             for (let idx in advises) {
                 let keywords = advises[idx].keyword
-                for (let idx in keywords) {
-                    if (new RegExp(keyword.toLowerCase()).test(keywords[idx])) {
+                for (let kwIdx in keywords) {
+                    if (new RegExp(keywords[kwIdx]).test(keyword.toLowerCase())) {
                         result[result.length] = advises[idx]
                         break;
                     }
