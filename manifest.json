@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Sitty",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Sitty is a web extension that can help you stay away from malicious websites, providing search suggestions and browsing suggestions.",
   "author": "HikariLan",
   "default_locale": "zh",
